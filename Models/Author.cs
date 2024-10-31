@@ -1,15 +1,19 @@
-﻿namespace Alupoae_Alexandra_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Alupoae_Alexandra_Lab2.Models
 {
     public class Author
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public ICollection<Book>? Books { get; set; } //navigation property
 
+        [Display(Name = "Author Name")]
         public string AuthorName
         {
             get { return FirstName + " " + LastName; }
         }
+        public ICollection<Book>? Books { get; set; } //navigation property
+
     }
 }
